@@ -33,10 +33,6 @@ Key things to remember:
 
 
 New Aces:
+
 22. Inspector - Reveals the top 2 card of the deck (or however many are left). Shuffle the deck.
 23. InspectorPlus - Reveals the top 3 card of the deck (or however many are left). Shuffle the deck.
-
-
-
-
-
