@@ -24,7 +24,8 @@ Game Terms:
 - Match - A Match occurrs between the Player and Opponent. Each Match lasts until both players chose to "Stay".
 - Round - A Round is a collection of Matches. A new Round begins when an Opponent is defeated.
 
-*Files*
+--------------------------------------------------------------------------------------------------------------------------------
+#Files
 
 Package Aces:
 This package contains all the Aces.
