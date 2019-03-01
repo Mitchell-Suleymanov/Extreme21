@@ -25,7 +25,7 @@ Game Terms:
 - Round - A Round is a collection of Matches. A new Round begins when an Opponent is defeated.
 
 --------------------------------------------------------------------------------------------------------------------------------
-#Files
+# Files
 
 Package Aces:
 This package contains all the Aces.
