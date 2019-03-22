@@ -134,8 +134,10 @@ public class Extreme21Frame {
     		   int i = cb.getSelectedIndex();
         	   if(i>=0){
         		   System.out.println("Item #" + (i+1) + " will do this: " + cb.getItemAt(i).getDescription());
+        		   game.getPlayer().useAce(i, game);
         		   cb.removeItemAt(cb.getSelectedIndex());
         	   }
+        	   update();
            }
     }); 
 		
@@ -144,6 +146,8 @@ public class Extreme21Frame {
 	           public void actionPerformed(ActionEvent evt){
 	                //then you know that is attached to this button
         		   int i = cb.getSelectedIndex();
+        		   //game.getPlayer()
+        		   
 	        	   if(i>=0){
 	        		   System.out.println("Item #" + (i+1) + " is " + cb.getItemAt(i).getName());
 	        	   }
@@ -161,19 +165,11 @@ public class Extreme21Frame {
 		//update();
 		if(game.getPlayer().getWillStay() && game.getOpponent().getWillStay()){
 
-			delay();
 			
 			System.out.println(game.revealOpponentHand());
 			
-//			try {
-//				TimeUnit.SECONDS.sleep(1);
-//			} catch (InterruptedException e) {
-//				e.printStackTrace();
-//			}
-			//delay();
-			game.endMatch();
-			
-			run();
+			delay();
+
 		}
 		else if(game.getPlayerIsNext())
 			playerGoes();
@@ -200,9 +196,7 @@ public class Extreme21Frame {
 	
 	private void update(){
 		labelPlayerHand.setText(game.getPlayerHand());
-		//if(!(game.getPlayer().getWillStay() && game.getOpponent().getWillStay()))
-			labelOpponentHand.setText(game.getOpponentHand());
-		
+		labelOpponentHand.setText(game.getOpponentHand());
 		labelPlayerBet.setText("Your Bet: " + game.getPlayer().getBet());
 		labelPlayerLife.setText("Your Life: " + game.getPlayer().getLife());
 		labelOpponentBet.setText("Opponent's Bet: " + game.getOpponent().getBet());
@@ -214,10 +208,19 @@ public class Extreme21Frame {
 	}
 	
 	private void delay(){
-		timer = new Timer(1000, new ActionListener(){
+		timer = new Timer(3000, new ActionListener(){
 			  @Override
 			  public void actionPerformed( ActionEvent e ){
-					labelOpponentHand.setText(game.revealOpponentHand());  
+					labelOpponentHand.setText(game.revealOpponentHand());
+			  }
+			} );
+			timer.setRepeats( false );
+			timer.start();		
+		timer = new Timer(6000, new ActionListener(){
+			  @Override
+			  public void actionPerformed( ActionEvent e ){
+					game.endMatch();
+					run();
 			  }
 			} );
 			timer.setRepeats( false );
