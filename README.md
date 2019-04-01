@@ -31,6 +31,10 @@ Package Aces:
 This package contains all the Aces.
 - Aces.java - Parent class for all Aces. Has default functions. All Aces extend this.
 - AceDrawX.java - Ace with ability to draw a specific card from the deck.
+- AceExchange.java - Ace with ability to exchange the last face up cards the Player and Opponent have.
+- AceTwoUp.java - Ace with ability to add 2 to the opposing player's Bet while it remains in play.
+
+
 
 Package Extreme21:
 This package contains the main file, GUI, and various Game Elements.
