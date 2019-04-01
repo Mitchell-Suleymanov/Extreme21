@@ -11,7 +11,8 @@ public class Extreme21Game {
 	private Opponent opponent;
 	private int round;
 	private int limit;
-	private boolean playerIsNext;	
+	private boolean playerIsNext;
+	private boolean updateAcesInPlay;
 	
 	public Extreme21Game(){
 		this.deck = new ArrayList<Integer>();
@@ -19,6 +20,7 @@ public class Extreme21Game {
 		this.round = 0;
 		this.limit = 21;
 		this.playerIsNext = true;
+		this.updateAcesInPlay = false;
 	}
 	
 	private Opponent generateOpponent(){
@@ -60,13 +62,13 @@ public class Extreme21Game {
 	public void newRound(){
 		round++;
 		opponent = generateOpponent();
-		
-		deck.clear();
-		for(int i=1;i<12;i++){this.deck.add(i);}
-		Collections.shuffle(deck);
-		player.getHand().clear();
-		
-		
+//		
+//		deck.clear();
+//		for(int i=1;i<12;i++){this.deck.add(i);}
+//		Collections.shuffle(deck);
+//		player.getHand().clear();
+//		
+//		
 		if(round ==1){
 			for(int i=0;i<4;i++)
 			{
@@ -75,14 +77,13 @@ public class Extreme21Game {
 			}
 		}
 		else{
-			player.addAce();
-			opponent.addAce();
 			opponent.addAce();
 		}
-		player.drawCard(deck);
-		opponent.drawCard(deck);
-		player.drawCard(deck);
-		opponent.drawCard(deck);
+//		player.drawCard(deck);
+//		opponent.drawCard(deck);
+//		player.drawCard(deck);
+//		opponent.drawCard(deck);
+		this.newMatch();
 	}
 	
 	public void newMatch(){
@@ -92,6 +93,11 @@ public class Extreme21Game {
 		player.getHand().clear();
 		opponent.getHand().clear();
 		
+		if(!player.getAcesInPlay().isEmpty()){ 
+			player.getAcesInPlay().clear();
+			updateAcesInPlay=true;
+		}
+				
 		player.addAce();
 		opponent.addAce();
 		
@@ -99,7 +105,9 @@ public class Extreme21Game {
 		opponent.drawCard(deck);
 		player.drawCard(deck);
 		opponent.drawCard(deck);
-		
+
+		player.setBet(1);
+		opponent.setBet(1);
 	}
 	
 	public void endMatch(){
@@ -115,7 +123,7 @@ public class Extreme21Game {
 				opponent.setLife(opponent.getLife() - opponent.getBet());
 			System.out.println(opponent.getLife());
 		}
-		else if(opponentSum<=limit && (opponentSum>opponentSum || playerSum>limit))
+		else if(opponentSum<=limit && (opponentSum>playerSum || playerSum>limit))
 		{
 			System.out.println("Opponent Wins!");
 			if(player.getBet()>0)
@@ -130,7 +138,7 @@ public class Extreme21Game {
 		
 		player.setWillStay(false);
 		opponent.setWillStay(false);
-		
+
 		//this.pause(1500);
 		if(opponent.getLife()<=0)
 			this.newRound();
@@ -153,6 +161,14 @@ public class Extreme21Game {
 	
 	public void setPlayerIsNext(){
 		playerIsNext = !(playerIsNext);
+	}
+	
+	public boolean getUpdateAcesInPlay(){
+		return updateAcesInPlay;
+	}
+	
+	public void setUpdateAcesInPlay(){
+		updateAcesInPlay = !(updateAcesInPlay);
 	}
 	
 	public String getPlayerHand(){
