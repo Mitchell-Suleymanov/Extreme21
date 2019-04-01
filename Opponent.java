@@ -13,6 +13,7 @@ public class Opponent {
 	protected boolean willStay;
 	protected ArrayList<Integer> hand;
 	protected ArrayList<Ace> aces;
+	protected ArrayList<Ace> acesInPlay;
 	
 	public int getSum(){
 		int sum=0;
@@ -41,6 +42,10 @@ public class Opponent {
 	public ArrayList<Ace> getAces() {
 		return aces;
 	}
+	
+	public ArrayList<Ace> getAcesInPlay() {
+		return acesInPlay;
+	}
 
 	public void setLife(int life) {
 		this.life = life;
@@ -61,6 +66,8 @@ public class Opponent {
 	public void setAces(ArrayList<Ace> aces) {
 		this.aces = aces;
 	}
+	
+	
 
 	public void addAce(){
 		//(max - min + 1) + min is your range, range is between 2 and 7
