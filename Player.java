@@ -10,6 +10,7 @@ public class Player {
 	private boolean willStay;
 	private ArrayList<Integer> hand;
 	private ArrayList<Ace> aces;
+	private ArrayList<Ace> acesInPlay;	
 
 	public Player(){
 		this.life = 10;
@@ -17,6 +18,7 @@ public class Player {
 		this.willStay= false;
 		this.hand = new ArrayList<Integer>();
 		this.aces = new ArrayList<Ace>();
+		this.acesInPlay = new ArrayList<Ace>();
 	}
 	
 	public int getSum(){
@@ -47,6 +49,10 @@ public class Player {
 		return aces;
 	}
 
+	public ArrayList<Ace> getAcesInPlay() {
+		return acesInPlay;
+	}
+	
 	public void setLife(int life) {
 		this.life = life;
 	}
@@ -69,15 +75,24 @@ public class Player {
 
 	public void addAce(){
 		//(max - min + 1) + min is your range, range is between 2 and 7
-		//Random random = new Random();
-		//int value = random.nextInt(6) + 1;
+		Random random = new Random();
+		int value = random.nextInt(6) + 1;
+		Ace ace;
+		
+		if(value<=4){ace = new AceTwoUp();}
+		else{ace = new AceDrawX();}
+		aces.add(ace);
+	}
+	
+	public void addAce(int id){
 
 		AceDrawX ace = new AceDrawX();
 		aces.add(ace);
 	}
 	
-	public void removeAce(Ace ace){
-			
+	public void useAce(int index, Extreme21Game game){
+		aces.remove(index).use(game);
+		
 	}
 	
 	public void drawCard(ArrayList<Integer> deck){
