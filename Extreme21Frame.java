@@ -41,6 +41,14 @@ public class Extreme21Frame {
 	private final JButton btnStay = new JButton("Stay");
 	private final JButton btnUseAce = new JButton("Use Ace");
 	private final JButton btnAceInfo = new JButton("Ace Info");
+	private final JButton button_0 = new JButton("1");
+	private final JButton button_1 = new JButton("2");
+	private final JButton button_2 = new JButton("3");
+	private final JButton button_3 = new JButton("-1");
+	private final JButton button_4 = new JButton("-2");
+	private final JButton button_5 = new JButton("-3");
+	private final JButton[] playerActiveAces = new JButton[6]; 
+	private final JButton[] opponentActiveAces = new JButton[6]; 
 
 	int count =1;
     
@@ -98,6 +106,38 @@ public class Extreme21Frame {
 		btnAceInfo.setBounds(564, 235, 130, 23);
 		frame.getContentPane().add(btnAceInfo);
 		
+		button_0.setBounds(123, 235, 76, 23);
+		frame.getContentPane().add(button_0);
+		
+		button_1.setBounds(209, 235, 76, 23);
+		frame.getContentPane().add(button_1);
+		
+		button_2.setBounds(295, 235, 76, 23);
+		frame.getContentPane().add(button_2);
+		
+		button_3.setBounds(123, 83, 76, 23);
+		frame.getContentPane().add(button_3);
+		
+		button_4.setBounds(209, 83, 76, 23);
+		frame.getContentPane().add(button_4);
+		
+		button_5.setBounds(291, 83, 80, 23);
+		frame.getContentPane().add(button_5);
+		
+		button_0.setVisible(false);
+		button_1.setVisible(false);
+		button_2.setVisible(false);
+		button_3.setVisible(false);
+		button_4.setVisible(false);
+		button_5.setVisible(false);
+
+		playerActiveAces[0]=button_0;
+		playerActiveAces[1]=button_1;
+		playerActiveAces[2]=button_2;
+		opponentActiveAces[0]=button_3;
+		opponentActiveAces[1]=button_4;
+		opponentActiveAces[2]=button_5;
+
 		//cb.addItem(new Ace());
 		
 	    //b.setToolTipText( "Click here to accept the option you have selected." ); something for later
@@ -195,6 +235,21 @@ public class Extreme21Frame {
 	}
 	
 	private void update(){
+		if(game.getUpdateAcesInPlay()){
+			int i=0;
+			ArrayList<Ace> acesInPlay = game.getPlayer().getAcesInPlay();
+			for(i=0;i<acesInPlay.size();i++){
+				playerActiveAces[i].setVisible(true);
+				playerActiveAces[i].setText(acesInPlay.get(0).getName());
+				playerActiveAces[i].setToolTipText(acesInPlay.get(0).getDescription());
+			}
+			for(int x=i;x<3;x++){
+				playerActiveAces[x].setVisible(false);
+			}
+		    game.setUpdateAcesInPlay();//Flag as false so this if statement wont be called again if no updates occurr
+		}
+		
+		
 		labelPlayerHand.setText(game.getPlayerHand());
 		labelOpponentHand.setText(game.getOpponentHand());
 		labelPlayerBet.setText("Your Bet: " + game.getPlayer().getBet());
@@ -202,6 +257,8 @@ public class Extreme21Frame {
 		labelOpponentBet.setText("Opponent's Bet: " + game.getOpponent().getBet());
 		labelOpponentLife.setText("Opponent's Life: " + game.getOpponent().getLife());
 
+		
+		
 		cb.removeAllItems();
 		for(int i=0;i<game.getPlayer().getAces().size();i++)
 			{cb.addItem(game.getPlayer().getAces().get(i));}
@@ -220,11 +277,11 @@ public class Extreme21Frame {
 			  @Override
 			  public void actionPerformed( ActionEvent e ){
 					game.endMatch();
+					update();
 					run();
 			  }
 			} );
 			timer.setRepeats( false );
 			timer.start();
-
 	}
 }
