@@ -40,7 +40,7 @@ New Aces:
 3. AceOfRestraint - Discard all Aces you have. Return all face-up cards in your hand to the deck. Draw 2 cards. You can no longer draw cards for this Match. Your opponent's bet is increased by 50.
 4. AceOfGreed - Draw 2 Aces.
 5. Mine - If this Ace leaves the field, draw 3 Aces.
-6. MinePlus - If this Ace leaves the field, draw 2 Aces.  by 2.
+6. MinePlus - If this Ace leaves the field, draw 2 Aces. Your opponent's bet is increased by 2.
 7. LuckyLucky - You feel luckier (Raises Luck by 10).
 8. LuckyLuckyPlus - Draw the best possible card from the deck. You feel luckier (Raises Luck by 20).
 9. Hex - Your opponent is no longer feeling lucky (Reset's Player's Luck).
