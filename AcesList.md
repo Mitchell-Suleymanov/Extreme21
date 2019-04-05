@@ -50,7 +50,7 @@ New Aces:
 11. CrisisA - If your life is 3 or less, draw the 3 Aces.
 12. CrisisD - If your life is 3 or less, draw the best possible card from the deck.
 13. CrisisBAD - If your life is at 1, draw the best possible card from the deck. Draw 5 Aces. Your opponent's bet is increased by 10.
-14. Endpoint - Return your last face-up card to the deck. Draw the largest and smallest cards from the deck.
+14. Endpoint - Return your last face-up card to the deck. Draw the largest and smallest cards from the deck.  
 ✓ 15. Extraction - Return your last face-up card to the deck. Draw Aces equal to the number of the card you just returned and increase your bet by that amount.
 16. Gust - You and your opponent return the last face-up card in your hands to the deck.
 17. Tornado - You and your opponent return all face-up cards in your hands to the deck.
