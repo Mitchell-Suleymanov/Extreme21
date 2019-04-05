@@ -11,19 +11,19 @@ Key things to remember:
 
 Classic Aces:
 
-1. DrawX - An Ace that is given a random number when you draw it (between 2~7). When used, it draws that card from the deck. If the card is not in the deck, nothing happens.
-2. OneUp - Your opponent's bet is increased by 1 while this Ace is in play.
-3. TwoUp - Your opponent's bet is increased by 2 while this Ace is in play.
-4. TwoUpPlus - Return your opponent's last face-up card to the deck. Your opponent's bet is increased by 2 while this Ace is in play.
-5. Return - Return your last face-up card to the deck.
-6. Remove - Return your opponent's last face-up card to the deck.
-7. Exchange - Swap you and your opponent's last face-up card.
+1. ✓ DrawX - An Ace that is given a random number when you draw it (between 2~7). When used, it draws that card from the deck. If the card is not in the deck, nothing happens.
+2. ✓ OneUp - Your opponent's bet is increased by 1 while this Ace is in play.
+3. ✓ TwoUp - Your opponent's bet is increased by 2 while this Ace is in play.
+4. ✓ TwoUpPlus - Return your opponent's last face-up card to the deck. Your opponent's bet is increased by 2 while this Ace is in play.
+5. ✓ Return - Return your last face-up card to the deck.
+6. ✓ Remove - Return your opponent's last face-up card to the deck.
+7. ✓ Exchange - Swap you and your opponent's last face-up card.
 8. AceSwitch - Two of your Aces are discard at random. Draw 3 Aces.
 9. AceSwitchPlus - Two of your Aces are discard at random. Draw 4 Aces.
 10. Shield - Your bet is reduced by 1 while this Ace is in play.
 11. ShieldPlus - Your bet is reduced by 2 while this Ace is in play.
-12. Destroy - Remove the last Ace in play by your opponent.
-13. DestroyPlus - Remove all the Aces in play by your opponent.
+12. ✓ Destroy - Remove the last Ace in play by your opponent.
+13. ✓ DestroyPlus - Remove all the Aces in play by your opponent.
 14. DestroyPlusPlus - Remove all the Aces in play by your opponent. They can no longer use Aces while this Ace is in play
 15. PerfectDraw - Draw the best possible card from the deck.
 16. PerfectDrawPlus - Draw the best possible card from the deck. Your opponent's bet is increased by 5 while this Ace is in play.
@@ -51,7 +51,7 @@ New Aces:
 12. CrisisD - If your life is 3 or less, draw the best possible card from the deck.
 13. CrisisBAD - If your life is at 1, draw the best possible card from the deck. Draw 5 Aces. Your opponent's bet is increased by 10.
 14. Endpoint - Return your last face-up card to the deck. Draw the largest and smallest cards from the deck.
-15. Extraction - Return your last face-up card to the deck. Draw Aces equal to the number of the card you just returned and increase your bet by that amount. ✓
+15. ✓ Extraction - Return your last face-up card to the deck. Draw Aces equal to the number of the card you just returned and increase your bet by that amount.
 16. Gust - You and your opponent return the last face-up card in your hands to the deck.
 17. Tornado - You and your opponent return all face-up cards in your hands to the deck.
 18. Cyclone - You and your opponent return all face-up cards in your hands to the deck. Remove all Aces from play.
