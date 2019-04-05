@@ -59,6 +59,6 @@ New Aces:
 20. EmergencyEvacuation - One randomly selected player returns all face-up cards in their hand to the deck.
 21. DiceDraw - A random number between 1 and 6 is selected. Draw that card from the deck. If the selected number is 1, draw the highest card in the deck.
 
-9 Classic Aces Finished ✓
-1 New Ace Finished ✓
-10/42 Aces Finished ✓
+9 Classic Aces Finished ✓  
+1 New Ace Finished ✓  
+10/42 Aces Finished ✓  
