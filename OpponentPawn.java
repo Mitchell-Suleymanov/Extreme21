@@ -2,8 +2,7 @@ package Opponents;
 
 import java.util.ArrayList;
 
-import Aces.Ace;
-import Aces.AceDrawX;
+import Aces.*;
 import Extreme21.Extreme21Game;
 
 public class OpponentPawn extends Opponent {
@@ -13,8 +12,10 @@ public class OpponentPawn extends Opponent {
 		this.bet  = 1;
 		this.luck = 10;
 		this.willStay = false;
+		this.canUseAces = true;
 		this.hand = new ArrayList<Integer>();
 		this.aces = new ArrayList<Ace>();
+		this.acesInPlay = new ArrayList<Ace>();
 	}
 	
 	@Override
@@ -53,6 +54,12 @@ public class OpponentPawn extends Opponent {
 			return;
 		}
 		
+		
+		if(game.getPlayer().getLife()>5 && acesInPlay.isEmpty() || acesInPlay.size()<2){
+			AceTwoUp ace = new AceTwoUp();
+			ace.use(game);
+		}
+		
 		for(int i=0;i<deck.size();i++){
 			if(mySum+deck.get(i)<=limit){count++;}
 		}
@@ -87,6 +94,8 @@ public class OpponentPawn extends Opponent {
 			willStay = false;
 			return;
 		}
+		
+		
 		
 //		while(life - bet <= 2 && bet<12){
 //			//play defense ace
