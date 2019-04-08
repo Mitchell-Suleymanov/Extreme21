@@ -8,6 +8,7 @@ public class Player {
 	private int life;
 	private int bet;
 	private boolean willStay;
+	private boolean canUseAces;
 	private ArrayList<Integer> hand;
 	private ArrayList<Ace> aces;
 	private ArrayList<Ace> acesInPlay;	
@@ -16,6 +17,7 @@ public class Player {
 		this.life = 10;
 		this.bet  = 1;
 		this.willStay= false;
+		this.canUseAces = true;
 		this.hand = new ArrayList<Integer>();
 		this.aces = new ArrayList<Ace>();
 		this.acesInPlay = new ArrayList<Ace>();
@@ -39,6 +41,10 @@ public class Player {
 
 	public boolean getWillStay() {
 		return willStay;
+	}
+	
+	public boolean getCanUseAces() {
+		return canUseAces;
 	}
 	
 	public ArrayList<Integer> getHand() {
@@ -65,6 +71,10 @@ public class Player {
 		this.willStay = willStay;
 	}
 
+	public void setCanUseAces(boolean canUseAces) {
+		this.canUseAces = canUseAces;
+	}
+	
 	public void setHand(ArrayList<Integer> hand) {
 		this.hand = hand;
 	}
@@ -79,8 +89,8 @@ public class Player {
 		int value = random.nextInt(6) + 1;
 		Ace ace;
 		
-		if(value<=4){ace = new AceTwoUp();}
-		else{ace = new AceDrawX();}
+		if(value<=2){ace = new AceExtraction();}
+		else{ace = new AceDestroyPlus();}
 		aces.add(ace);
 	}
 	
