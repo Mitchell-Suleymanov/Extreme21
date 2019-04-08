@@ -11,8 +11,10 @@ public class Opponent {
 	protected int bet;
 	protected int luck;
 	protected boolean willStay;
+	protected boolean canUseAces;
 	protected ArrayList<Integer> hand;
 	protected ArrayList<Ace> aces;
+	protected Ace[] acess;
 	protected ArrayList<Ace> acesInPlay;
 	
 	public int getSum(){
@@ -33,6 +35,10 @@ public class Opponent {
 	
 	public boolean getWillStay(){
 		return willStay;
+	}
+	
+	public boolean getCanUseAces(){
+		return canUseAces;
 	}
 
 	public ArrayList<Integer> getHand() {
@@ -59,6 +65,10 @@ public class Opponent {
 		this.willStay = stay;
 	}
 
+	public void setCanUseAces(boolean canUseAces){
+		this.canUseAces = canUseAces;
+	}
+	
 	public void setHand(ArrayList<Integer> hand) {
 		this.hand = hand;
 	}
