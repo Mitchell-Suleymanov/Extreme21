@@ -22,7 +22,7 @@ public class Ace {
 	public void use(Extreme21Game game){
 	}
 	
-	public void removeFromPlay(Extreme21Game game, boolean target){
+	public void removeFromPlay(Extreme21Game game){
 	}
 	
 	public String toString(){
