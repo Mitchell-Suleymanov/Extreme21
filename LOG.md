@@ -1,6 +1,17 @@
 # Extreme21
 An Extreme game of 21 (Based on the Resident Evil 7 minigame "Survival 21")
 
+4-7-2019
+
+Changes/Bug Fixes:
+- Removed Summary.
+- Functionality for "Aces In Play" has been added. Some Aces will now remain in play and can be removed through other Ace effects (Destroy, Destroy+, etc.)
+- Added new Aces (Destroy, Destroy+, Extraction, One Up, Two Up, Two Up+, Return, Remove)
+- Updated AcesList.md to have a check mark (✓) next to Aces that have been programmed.
+- Updated code for Extreme21Frame.java to be more readable and less redundant.
+- Fixed an issue where Ace Info was giving the Ace's Name instead of the Description.
+- Changed logic for Opponent's Aces (No longer will be an ArrayList. Instead, it will be an array with a fixed size due to an Opponent having a limited variety of Aces.)
+----------------------------------------------------------------------------------------------------
 3-31-2019  
 Summary: The main focus of this update was "Aces In Play". An Ace that is in play means it remains on the field until it is Destroyed, Replaced, or removed due to the Round/Match ending. An Ace can be "Destroyed" with the Aces Destroy, Destroy+, and several others that I plan to add. An Ace can be Replaced under specific conditions. For example, two Aces that raise the limit cannot be active at the same time. The one used the latest is the one that remains. Lastly, an Ace in play is removed when the Match/Round ends. This happens to all Aces in play. Their effects when leaving the field do not get triggered this way. I managed to add in the Two Up Ace as my main way to test this out. Buttons were used to show if an Ace is in play. This will later be changed to a maximum of 6 buttons for both players. The buttons themselves will also be changed in a later update to something like a picture. A nice little thing I added is allowing the buttons highlight text to tell you what the Ace does. 
 
