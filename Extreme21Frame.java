@@ -1,6 +1,8 @@
 package Extreme21;
 
 import Aces.*;
+import Opponents.*;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -54,6 +56,8 @@ public class Extreme21Frame {
     
 
 	private Extreme21Game game;
+	private Player player;
+	private Opponent opponent;
 	
 	public Extreme21Frame() {
 		initialize();
@@ -157,7 +161,7 @@ public class Extreme21Frame {
 		btnStay.addActionListener(new ActionListener(){
 	           @Override
 	           public void actionPerformed(ActionEvent evt){
-	        	   game.getPlayer().setWillStay(true);
+	        	   player.setWillStay(true);
 	        	   btnDraw.setVisible(false);
 	        	   btnStay.setVisible(false);
 	        	   btnUseAce.setVisible(false);
@@ -174,9 +178,10 @@ public class Extreme21Frame {
     		   int i = cb.getSelectedIndex();
         	   if(i>=0){
         		   System.out.println("Item #" + (i+1) + " will do this: " + cb.getItemAt(i).getDescription());
-        		   game.getPlayer().useAce(i, game);
+        		   player.useAce(i, game);
         		   cb.removeItemAt(cb.getSelectedIndex());
         	   }
+        	   opponent.setWillStay(false);
         	   update();
            }
     }); 
@@ -184,18 +189,20 @@ public class Extreme21Frame {
 		btnAceInfo.addActionListener(new ActionListener(){
 	           @Override
 	           public void actionPerformed(ActionEvent evt){
-	                //then you know that is attached to this button
+	               //then you know that is attached to this button
         		   int i = cb.getSelectedIndex();
-        		   //game.getPlayer()
+        		   //player
         		   
 	        	   if(i>=0){
-	        		   System.out.println("Item #" + (i+1) + " is " + cb.getItemAt(i).getName());
+	        		   System.out.println("Item #" + (i+1) + " is " + cb.getItemAt(i).getDescription());
 	        	   }
 	           }
 	    }); 
 	    
 		game = new Extreme21Game();
 		game.newRound();
+		player=game.getPlayer();
+		opponent= game.getOpponent();
 		run();
 		
 		//to hide a button, do .setVisible(false);
@@ -203,7 +210,7 @@ public class Extreme21Frame {
 	
 	private void run(){
 		//update();
-		if(game.getPlayer().getWillStay() && game.getOpponent().getWillStay()){
+		if(player.getWillStay() && opponent.getWillStay()){
 
 			
 			System.out.println(game.revealOpponentHand());
@@ -227,7 +234,7 @@ public class Extreme21Frame {
 	
 	private void opponentGoes(){
 		update(); 
-		game.getOpponent().nextAction(game);
+		opponent.nextAction(game);
 		update(); 
 		//game.pause(5000);
 		game.setPlayerIsNext();
@@ -237,31 +244,43 @@ public class Extreme21Frame {
 	private void update(){
 		if(game.getUpdateAcesInPlay()){
 			int i=0;
-			ArrayList<Ace> acesInPlay = game.getPlayer().getAcesInPlay();
-			for(i=0;i<acesInPlay.size();i++){
+			ArrayList<Ace> playerAcesInPlay = player.getAcesInPlay();
+			for(i=0;i<playerAcesInPlay.size();i++){
 				playerActiveAces[i].setVisible(true);
-				playerActiveAces[i].setText(acesInPlay.get(0).getName());
-				playerActiveAces[i].setToolTipText(acesInPlay.get(0).getDescription());
+				playerActiveAces[i].setText(playerAcesInPlay.get(i).getName());
+				playerActiveAces[i].setToolTipText(playerAcesInPlay.get(i).getDescription());
 			}
 			for(int x=i;x<3;x++){
 				playerActiveAces[x].setVisible(false);
 			}
-		    game.setUpdateAcesInPlay();//Flag as false so this if statement wont be called again if no updates occurr
+			
+			ArrayList<Ace> opponentAcesInPlay = opponent.getAcesInPlay();
+			for(i=0;i<opponentAcesInPlay.size();i++){
+				opponentActiveAces[i].setVisible(true);
+				opponentActiveAces[i].setText(opponentAcesInPlay.get(i).getName());
+				opponentActiveAces[i].setToolTipText(opponentAcesInPlay.get(i).getDescription());
+			}
+			for(int x=i;x<3;x++){
+				opponentActiveAces[x].setVisible(false);
+			}
+			
+			
+		    game.setUpdateAcesInPlay(false);//Flag as false so this if statement wont be called again if no updates occur
 		}
 		
 		
 		labelPlayerHand.setText(game.getPlayerHand());
 		labelOpponentHand.setText(game.getOpponentHand());
-		labelPlayerBet.setText("Your Bet: " + game.getPlayer().getBet());
-		labelPlayerLife.setText("Your Life: " + game.getPlayer().getLife());
-		labelOpponentBet.setText("Opponent's Bet: " + game.getOpponent().getBet());
-		labelOpponentLife.setText("Opponent's Life: " + game.getOpponent().getLife());
+		labelPlayerBet.setText("Your Bet: " + player.getBet());
+		labelPlayerLife.setText("Your Life: " + player.getLife());
+		labelOpponentBet.setText("Opponent's Bet: " + opponent.getBet());
+		labelOpponentLife.setText("Opponent's Life: " + opponent.getLife());
 
 		
 		
 		cb.removeAllItems();
-		for(int i=0;i<game.getPlayer().getAces().size();i++)
-			{cb.addItem(game.getPlayer().getAces().get(i));}
+		for(int i=0;i<player.getAces().size();i++)
+			{cb.addItem(player.getAces().get(i));}
 	}
 	
 	private void delay(){
