@@ -8,7 +8,7 @@ public class AceOneUp extends Ace {
 
 	public AceOneUp(){
 		this.name = "One Up";
-		this.description = "Your opponent's bet is increased by 1 while this Ace is in play.";
+		this.description = "Your opponent's bet is increased by 1 while this Ace is in play. Also draw one Ace";
 		this.isActive=true;
 	}
 	
@@ -23,7 +23,7 @@ public class AceOneUp extends Ace {
 			game.getOpponent().setBet(bet+1); //Player used OneUp, so increment Opponent's Bet by 1 
 			AceOneUp ace = new AceOneUp(); 
 			game.getPlayer().getAcesInPlay().add(ace); //Add OneUp to Player's list of acesInPlay
-			
+			game.getPlayer().addAce();
 		}
 		else{
 			targetPlayer= true;
@@ -31,6 +31,7 @@ public class AceOneUp extends Ace {
 			game.getPlayer().setBet(bet+1); //Opponent used OneUp, so increment Player's Bet by 1 
 			AceOneUp ace = new AceOneUp();
 			game.getOpponent().getAcesInPlay().add(ace); //Add OneUp to Opponent's list of acesInPlay
+			game.getOpponent().addAce();
 		}
 		
 		
@@ -38,7 +39,7 @@ public class AceOneUp extends Ace {
 	
 	//When OneUp is removed from play, undo it's effects.
 	//target variable will determine who to adjust. True = Player, False = Opponent
-	//Effect undone: Reduce opponent's bet by 1
+	//Removal Effect: Reduce opponent's bet by 1
 	@Override
 	public void removeFromPlay(Extreme21Game game){
 		game.setUpdateAcesInPlay(true);//flag as true so it is updated in the update() method for Extreme11Frame
