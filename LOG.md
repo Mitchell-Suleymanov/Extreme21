@@ -1,6 +1,19 @@
 # Extreme21
 An Extreme game of 21 (Based on the Resident Evil 7 minigame "Survival 21")
 
+
+4-24-2019
+
+Changes/Bug Fixes:
+- Added new Aces (Ace of Greed, Ace Switch, Ace Switch+, Destroy++, Extraction, Inspector, Inspector+, Mine, Mine+, Perfect Draw, Perfect Draw+, Ultimate Draw, Shield, Shield+)
+- Adjusted One Up and Two Up to now let the user draw an Ace after using it.
+- Added logic for Player drawing random Aces.
+- Fixed an issue where Ace Info was not displaying the correct information for the selected Ace.
+- Fixed Opponent Pawn's logic. 
+- Fixed an error where certain variables for Player and Opponent were not reset when the Match ended.
+- Work has begun on the Opponent Knight class. Knight will have Aces focusing on Offense and Defense.
+- Work has begun on the Opponent Bishop class. Bishop will have Aces focusing on drawing specific cards from the deck.
+----------------------------------------------------------------------------------------------------
 4-7-2019
 
 Changes/Bug Fixes:
