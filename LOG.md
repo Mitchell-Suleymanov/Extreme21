@@ -5,7 +5,7 @@ An Extreme game of 21 (Based on the Resident Evil 7 minigame "Survival 21")
 4-24-2019
 
 Changes/Bug Fixes:
-- Added new Aces (Ace of Greed, Ace Switch, Ace Switch+, Destroy++, Extraction, Inspector, Inspector+, Mine, Mine+, Perfect Draw, Perfect Draw+, Ultimate Draw, Shield, Shield+)
+- Added 14 new Aces (Ace of Greed, Ace Switch, Ace Switch+, Destroy++, Extraction, Inspector, Inspector+, Mine, Mine+, Perfect Draw, Perfect Draw+, Ultimate Draw, Shield, Shield+)
 - Adjusted One Up and Two Up to now let the user draw an Ace after using it.
 - Added logic for Player drawing random Aces.
 - Fixed an issue where Ace Info was not displaying the correct information for the selected Ace.
@@ -19,7 +19,7 @@ Changes/Bug Fixes:
 Changes/Bug Fixes:
 - Removed Summary.
 - Functionality for "Aces In Play" has been added. Some Aces will now remain in play and can be removed through other Ace effects (Destroy, Destroy+, etc.)
-- Added new Aces (Destroy, Destroy+, Extraction, One Up, Two Up, Two Up+, Return, Remove)
+- Added 8 new Aces (Destroy, Destroy+, Extraction, One Up, Two Up, Two Up+, Return, Remove)
 - Updated AcesList.md to have a check mark (✓) next to Aces that have been programmed.
 - Updated code for Extreme21Frame.java to be more readable and less redundant.
 - Fixed an issue where Ace Info was giving the Ace's Name instead of the Description.
