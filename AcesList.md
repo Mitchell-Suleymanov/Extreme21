@@ -18,16 +18,16 @@ Classic Aces:
 5. ✓ Return - Return your last face-up card to the deck.
 6. ✓ Remove - Return your opponent's last face-up card to the deck.
 7. ✓ Exchange - Swap you and your opponent's last face-up card.
-8. AceSwitch - Two of your Aces are discard at random. Draw 3 Aces.
-9. AceSwitchPlus - Two of your Aces are discard at random. Draw 4 Aces.
-10. Shield - Your bet is reduced by 1 while this Ace is in play.
-11. ShieldPlus - Your bet is reduced by 2 while this Ace is in play.
+8. ✓ AceSwitch - Two of your Aces are discard at random. Draw 3 Aces.
+9. ✓ AceSwitchPlus - Two of your Aces are discard at random. Draw 4 Aces.
+10. ✓ Shield - Your bet is reduced by 1 while this Ace is in play.
+11. ✓ ShieldPlus - Your bet is reduced by 2 while this Ace is in play.
 12. ✓ Destroy - Remove the last Ace in play by your opponent.
 13. ✓ DestroyPlus - Remove all the Aces in play by your opponent.
-14. DestroyPlusPlus - Remove all the Aces in play by your opponent. They can no longer use Aces while this Ace is in play
-15. PerfectDraw - Draw the best possible card from the deck.
-16. PerfectDrawPlus - Draw the best possible card from the deck. Your opponent's bet is increased by 5 while this Ace is in play.
-17. UltimateDraw - Draw the best possible card from the deck. Also draw 2 Aces.
+14. ✓ DestroyPlusPlus - Remove all the Aces in play by your opponent. They can no longer use Aces while this Ace is in play
+15. ✓ PerfectDraw - Draw the best possible card from the deck.
+16. ✓ PerfectDrawPlus - Draw the best possible card from the deck. Your opponent's bet is increased by 5 while this Ace is in play.
+17. ✓ UltimateDraw - Draw the best possible card from the deck. Also draw 2 Aces.
 18. GoFor17 - The closest to 17 wins while this Ace is in play. Replaces other "Go For" Aces that are already in play.
 19. GoFor24 - The closest to 24 wins while this Ace is in play. Replaces other "Go For" Aces that are already in play.
 20. GoFor27 - The closest to 27 wins while this Ace is in play. Replaces other "Go For" Aces that are already in play.
@@ -37,12 +37,12 @@ Classic Aces:
 
 New Aces:
 
-1. Inspector - Reveals the top 2 card of the deck (or however many are left). Shuffle the deck.
-2. InspectorPlus - Reveals the top 3 card of the deck (or however many are left). Shuffle the deck.
+1. ✓ Inspector - Reveals the top 2 card of the deck (or however many are left). Shuffle the deck.
+2. ✓ InspectorPlus - Reveals the top 3 card of the deck (or however many are left). Shuffle the deck.
 3. AceOfRestraint - Discard all Aces you have. Return all face-up cards in your hand to the deck. Draw 2 cards. You can no longer draw cards for this Match. Your opponent's bet is increased by 50.
-4. AceOfGreed - Draw 2 Aces.
-5. Mine - If this Ace leaves the field, draw 3 Aces.
-6. MinePlus - If this Ace leaves the field, draw 2 Aces. Your opponent's bet is increased by 2.
+4. ✓ AceOfGreed - Draw 2 Aces.
+5. ✓ Mine - If this Ace leaves the field, draw 3 Aces.
+6. ✓ MinePlus - If this Ace leaves the field, draw 2 Aces. Your opponent's bet is increased by 2.
 7. LuckyLucky - You feel luckier (Raises Luck by 10).
 8. LuckyLuckyPlus - Draw the best possible card from the deck. You feel luckier (Raises Luck by 20).
 9. Hex - Your opponent is no longer feeling lucky (Reset's Player's Luck).
@@ -59,6 +59,6 @@ New Aces:
 20. EmergencyEvacuation - One randomly selected player returns all face-up cards in their hand to the deck.
 21. DiceDraw - A random number between 1 and 6 is selected. Draw that card from the deck. If the selected number is 1, draw the highest card in the deck.
 
-9 Classic Aces Finished ✓  
-1 New Ace Finished ✓  
-10/42 Aces Finished ✓  
+17 Classic Aces Finished ✓  
+6 New Ace Finished ✓  
+23/42 Aces Finished ✓  
