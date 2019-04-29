@@ -31,7 +31,11 @@ Classic Aces:
 18. GoFor17 - The closest to 17 wins while this Ace is in play. Replaces other "Go For" Aces that are already in play.
 19. GoFor24 - The closest to 24 wins while this Ace is in play. Replaces other "Go For" Aces that are already in play.
 20. GoFor27 - The closest to 27 wins while this Ace is in play. Replaces other "Go For" Aces that are already in play.
-21. Harvest - Draw an Ace every time your opponent uses an Ace while this Ace is in play.
+21. ✓ Draw2+ - Draw the 2 card. If it is not in the deck, nothing happens. Also draw one Ace.
+22. ✓ Draw4+ - Draw the 4 card. If it is not in the deck, nothing happens. Also draw one Ace.
+23. ✓ Draw6+ - Draw the 6 card. If it is not in the deck, nothing happens. Also draw one Ace.
+24. ✓ Twenty-One-Up - This can only be used if your card total is 21. Raise your opponent's bet by 21 while this Ace is in play.
+25. Harvest - Draw an Ace every time your opponent uses an Ace while this Ace is in play.
 (More to be added)
 
 
@@ -58,7 +62,8 @@ New Aces:
 19. Evacuation - One random face-up card on the field is removed.
 20. EmergencyEvacuation - One randomly selected player returns all face-up cards in their hand to the deck.
 21. DiceDraw - A random number between 1 and 6 is selected. Draw that card from the deck. If the selected number is 1, draw the highest card in the deck.
+22. Queen's Double - Your bet becomes 0 while this Ace is in play.
 
-17 Classic Aces Finished ✓  
+21 Classic Aces Finished ✓  
 6 New Ace Finished ✓  
-23/42 Aces Finished ✓  
+27/47 Aces Finished ✓  
