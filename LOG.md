@@ -8,10 +8,10 @@ Changes/Bug Fixes:
 - Added 4 new Aces (Draw 2+, Draw 4+, Draw 6+, Twenty-One-Up)
 - Added Opponent Bishop. This Opponent will focus on trying to reach 21, or the games Limit, using Aces to draw 2, 4, or 6 from the Deck. Once 21 is reached, Bishop will use a Twenty-One-Up Ace to go for an instant kill on the Player. Bishop will also constantly use One-Up Aces and useless draw Aces to constantly replace it's supply.
 - Fixed a bug where Perfect Draw would output "No cards in deck" if no best card was found.
-- Fixed an issue where no new Opponent was created when defeated.
-- Fixed an error where some default variables for Player and Opponent were not reset.
-- Fixed an error in Bishop's AI for using Draw Aces.
-- Fixed an error where a negative Bet would be shown for Player or Opponent under certain circumstances. Bet will now be displayed properly (never showing a value below 0 if it is negative, nor subtract a negative Bet from the losers Life).
+- Fixed a bug where Ultimate Draw was added as an Ace In Play if no cards were in the Deck.
+- Fixed a bug where no new Opponent was created when defeated.
+- Fixed a bug in Bishop's AI for using Draw Aces.
+- Fixed a bug where a negative Bet would be shown for Player or Opponent under certain circumstances. Bet will now be displayed properly (never showing a value below 0 if it is negative, nor subtract a negative Bet from the losers Life).
 
 
 ----------------------------------------------------------------------------------------------------
