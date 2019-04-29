@@ -30,11 +30,15 @@ Game Terms:
 Package Aces:
 This package contains all the Aces.
 - Aces.java - Parent class for all Aces. Has default functions. All Aces extend this.
+- AceAceOfGreed.java - Ace with ability to draw 2 Aces.
+- AceAceSwitch.java - By randomly discarding 2 Aces, the user can draw new 3 Aces.
+- AceAceSwitchPlus.java - Evolution of above AceSwitch. By randomly discarding 2 Aces, the user can draw new 4 Aces.
+- AceDestroy.java - The user removes the last Ace in play by the opponent.
+- AceDestroyPlus.java - Evolution of Destroy. The user removes all Aces in play by the opponent.
+- AceDestroyPlusPlus.java - Evolution of Destroy+. The user removes all Aces in play by the opponent and restricts them from using Aces again until the Match is over.
 - AceDrawX.java - Ace with ability to draw a specific card from the deck.
 - AceExchange.java - Ace with ability to exchange the last face up cards the Player and Opponent have.
 - AceTwoUp.java - Ace with ability to add 2 to the opposing player's Bet while it remains in play.
-
-
 
 Package Extreme21:
 This package contains the main file, GUI, and various Game Elements.
@@ -47,3 +51,4 @@ Package Opponents:
 This package contains all opponents.
 - Opponent.java - Parent class of all opponents. Has default functions. All Opponents extend this.
 - OpponentPawn.java - Basic opponent the Player can face. Easy AI. 
+- OpponentBishop.java - Medium opponent the Player will face. Their goal is to reach 21, or the game's limit, then use the Twenty-One-Up Ace for an instant kill against the Player. Bishop will constantly use Draw Aces to draw the 2, 4, or 6 card. They also will use these drawing Aces in addition to the OneUp to constantly draw and replenish their supply of Aces.
