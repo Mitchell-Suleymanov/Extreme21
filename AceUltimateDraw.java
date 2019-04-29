@@ -76,8 +76,6 @@ public class AceUltimateDraw extends Ace {
 		else{
 			//The Opponent AI will know in advance if the deck is empty or not, so they will never reach here.
 			//That means this section will only be reached by the Player.
-			AceUltimateDraw ace = new AceUltimateDraw(); 
-			game.getPlayer().getAcesInPlay().add(ace); //Add Ultimate Draw to Player's list of acesInPlay
 			System.out.println("No cards in Deck.");
 		}
 			
